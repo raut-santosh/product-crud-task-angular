@@ -1,14 +1,17 @@
 <main class="main container mt-3 card">
     <div class="main__heading text-center mt-5">
-        <h1>Add Product</h1>
+        <h1>{{model._id ? 'Edit':'Add'}} Product</h1>
     </div>
-    <form action="" class="container">
+    <form class="container" enctype="multipart/form-data" method="post">
         <div class="row mt-5">
             <div class="col-6">
                 <div class="row" *ngIf="items.length>0; else imagenotfound">
                     <div class="col-4 mt-2" *ngFor="let item of items; let i = index">
                         <div class="card card__product">
                             <img [src]="apiUrl + '/' +item.path" class="card-img-top p-1" alt="Product Image">
+                            <div class="card-body action-btn">
+                                <button class="btn btn-danger" (click)="deleteImage(i)">Delete</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -21,23 +24,27 @@
             <div class="col-6">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Product name">
+                    <input type="text" name="name" [(ngModel)]="model.name" class="form-control" id="name"
+                        placeholder="Product name">
                 </div>
                 <div class="mb-3">
                     <label for="price" class="form-label">Price</label>
-                    <input type="number" class="form-control" id="price" placeholder="Product price">
+                    <input type="number" name="price" [(ngModel)]="model.price" class="form-control" id="price"
+                        placeholder="Product price">
                 </div>
                 <div class="mb-3">
                     <label for="SKU" class="form-label">SKU</label>
-                    <input type="text" class="form-control" id="SKU" placeholder="Product SKU">
+                    <input type="text" name="sku" [(ngModel)]="model.sku" class="form-control" id="SKU"
+                        placeholder="Product SKU">
                 </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Upload Images</label>
-                    <input type="file" class="form-control" name="files" id="image" multiple  (change)="onFileChange($event)">
+                    <input type="file" class="form-control" name="files" id="image" multiple
+                        (change)="onFileChange($event)">
                 </div>
                 <div class="mb-3 d-flex justify-content-around">
                     <button class="btn btn-danger">Cancel</button>
-                    <button class="btn btn-primary">Save</button>
+                    <button class="btn btn-primary" (click)="formSubmit($event)">Save</button>
                 </div>
             </div>
         </div>
