@@ -1,0 +1,10 @@
+.container-fluid {
+    display: flex;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.content {
+    flex-grow: 1;
+    overflow-y: auto;
+}
