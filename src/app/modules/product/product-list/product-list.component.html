@@ -16,7 +16,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="card-body">
-                                    <h5 class="card-head" [routerLink]="['/detail']" [queryParams]="{id: item._id}">{{item.name}}</h5>
+                                    <h5 class="card-head" [routerLink]="['/detail', item._id]">{{item.name}}</h5>
                                     <p class="card-text"> SKU: {{item.sku}}</p>
                                     <p class="card-text">Price: {{item.price}} &#x20B9;</p>
                                     <p class="card-text"><small class="text-muted">Updated {{updatedOn(item.updatedOn)}}</small></p>
