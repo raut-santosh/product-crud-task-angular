@@ -1,7 +1,22 @@
 .card{
-    width: 350px;
+    width: 100%;
 }
 
 .card-title{
     text-align: center;
+}
+
+.card-image{
+    /* width: 200px; */
+    height: 150px;
+    padding: 20px;
+}
+
+.card-image-wrapper{
+    padding-left: 30px;
+}
+
+.main__heading button{
+    position: absolute;
+    right: 100px;
 }

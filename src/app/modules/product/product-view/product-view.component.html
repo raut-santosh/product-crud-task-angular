@@ -1,1 +1,32 @@
-<p>product-view works!</p>
+<main class="main container mt-3 card">
+    <div class="main__heading text-center mt-5">
+        <button class="btn btn-secondary" (click)="goBack()"><i class="bi bi-arrow-left-square"></i></button>
+        <h1>View Product</h1>
+    </div>
+    <div class="container p-5">
+        <div class="row mt-5">
+            <div class="col-6">
+                <div class="row" *ngIf="items.length>0; else imagenotfound">
+                    <div class="col-4 mt-2" *ngFor="let item of items; let i = index">
+                        <div class="card card__product">
+                            <img [src]="apiUrl + '/' +item.path" class="card-img-top p-1" alt="Product Image">
+                            <!-- <div class="card-body action-btn">
+                                <button class="btn btn-danger" (click)="deleteImage(i)">Delete</button>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <ng-template class="row" #imagenotfound>
+                    <div class="col-12 text-center">
+                        <p>Images not available.</p>
+                    </div>
+                </ng-template>
+            </div>
+            <div class="col-6 product__view">
+                <span><strong>Product Name: </strong>{{model.name}}</span> <br>
+                <span><strong>Product Price: </strong>{{model.price}} &#x20B9;</span><br>
+                <span><strong>Product SKU: </strong>{{model.sku}}</span>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,5 +1,6 @@
 <main class="main container mt-3 card">
     <div class="main__heading text-center mt-5">
+        <button class="btn btn-secondary" (click)="goBack()"><i class="bi bi-arrow-left-square"></i></button>
         <h1>{{model._id ? 'Edit':'Add'}} Product</h1>
     </div>
     <form class="container" enctype="multipart/form-data" method="post">

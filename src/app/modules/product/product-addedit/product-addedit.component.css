@@ -1,15 +1,9 @@
 .card__product img {
     width: 100%;
-    height: 100%;
     object-fit: contain;
+    height: 150px;
 }
 
-.card__product {
-    height: 150px;
-    /* Adjust the height as needed */
-    overflow: hidden;
-    /* To hide any overflow (cropping) */
-}
 
 .action-btn {
     width: 100%;
@@ -33,4 +27,9 @@
 .card__product:hover .action-btn {
     opacity: 1;
     transform: translateY(0);
+}
+
+.main__heading button{
+    position: absolute;
+    left: 100px;
 }

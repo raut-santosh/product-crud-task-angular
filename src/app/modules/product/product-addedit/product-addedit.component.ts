@@ -3,6 +3,7 @@ import { ApiService } from 'src/app/services';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-product-addedit',
@@ -11,11 +12,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductAddeditComponent implements OnInit {
 
-  items = [];
-  apiUrl = environment.apiUrl;
+  items: any = [];
+  apiUrl: string = environment.apiUrl;
   model: any = {};
   productId: string;
-  constructor(private apiService: ApiService, private route: ActivatedRoute) { }
+  constructor(private apiService: ApiService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -77,5 +78,8 @@ export class ProductAddeditComponent implements OnInit {
 
   deleteImage(index){
     this.items.splice(index,1);
+  }
+  goBack(){
+    this.location.back();
   }
 }

@@ -1,0 +1,17 @@
+.card__product img {
+    width: 100%;
+    object-fit: contain;
+    height: 150px;
+}
+
+.product__view{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+.main__heading button{
+    position: absolute;
+    left: 100px;
+}

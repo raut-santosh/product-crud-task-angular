@@ -9,7 +9,6 @@ const routes: Routes = [
   { path: 'list', component: ProductListComponent },
   { path: 'detail/:id', component: ProductViewComponent },
   { path: 'addedit', component: ProductAddeditComponent },
-  { path: 'addedit/:id', component: ProductAddeditComponent },
 ];
 
 @NgModule({
