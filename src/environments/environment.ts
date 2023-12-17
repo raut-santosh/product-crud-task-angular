@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://product-crud-node.raegesports.com/'
+  apiUrl: 'https://product-crud-node.raegesports.com'
 };
 
 /*
